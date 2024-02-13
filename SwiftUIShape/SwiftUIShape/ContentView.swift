@@ -115,7 +115,7 @@ struct ContentView: View {
                         .font(.system(.largeTitle, design: .rounded))
                         .bold()
                         .foregroundColor(.red)
-                       .offset(x: 90, y: 680)
+                        .offset(x: 90, y: 680)
                     
                 }
             }
