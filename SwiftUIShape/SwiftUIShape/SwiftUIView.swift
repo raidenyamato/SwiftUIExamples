@@ -7,14 +7,25 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct Dome: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        
+        path.move(to: CGPoint(x: 0, y: 0))
+        path.addQuadCurve(
+            to: CGPoint(x: rect.size.width, y: 0),
+            control: CGPoint(x: rect.size.width/2,
+                             y: -(rect.size.width * 0.1)))
+        path.addRect(CGRect(x: 0, y: 0,
+                            width: rect.size.width,
+                            height: rect.size.height))
+        
+        return path
     }
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
+struct Dome_Previews: PreviewProvider {
     static var previews: some View {
-        SwiftUIView()
+        Dome()
     }
 }
