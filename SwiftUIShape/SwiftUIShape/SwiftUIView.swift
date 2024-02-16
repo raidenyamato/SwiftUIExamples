@@ -20,7 +20,7 @@ struct Dome: Shape {
                             width: rect.size.width,
                             height: rect.size.height))
         
-        return path
+        return path 
     }
 }
 
