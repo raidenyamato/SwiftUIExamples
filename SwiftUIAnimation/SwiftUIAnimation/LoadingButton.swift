@@ -13,17 +13,13 @@ struct LoadingButton: View {
     @Binding  var completed: Bool
     @Binding  var loading: Bool
     
-    
-    
-    
     var body: some View {
         
         ZStack {
             
-            
             RoundedRectangle(cornerRadius: 30)
                 .frame(width: processing ? 250 : 200 , height: 60)
-                .foregroundColor(.green)
+                .foregroundColor(completed ? .red : .green)
             
             
             if !processing {
@@ -53,8 +49,19 @@ struct LoadingButton: View {
                     startProcessing()
                 }
             }
+            
+            if completed {
+                Text("Done")
+                    .font(.system(.title, design: .rounded))
+                    .bold()
+                    .foregroundColor(.white)
+                    .onAppear {
+                        self.endProcessing()
+                    }
+            }
 
         }
+        .animation(.spring(), value: loading)
         .onTapGesture {
             if !loading {
                 processing.toggle()
@@ -70,6 +77,14 @@ struct LoadingButton: View {
         self.loading = true
      DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             self.completed = true
+        }
+    }
+    
+    private func endProcessing() {
+     DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+         processing = false
+         completed = false
+         loading = false
         }
     }
     
