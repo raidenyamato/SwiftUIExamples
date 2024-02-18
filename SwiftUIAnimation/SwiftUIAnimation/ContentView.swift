@@ -23,6 +23,11 @@ struct ContentView: View {
     @State private var recordBegin = false
     @State private var recording = false
     
+    // for button
+    @State private var processing = false
+    @State private var completed = false
+    @State private var loading = false
+    
     var body: some View {
         
         ScrollView {
@@ -85,11 +90,7 @@ struct ContentView: View {
                         .animation(
                             .linear(duration: 4)
                             .repeatForever(autoreverses: false), value: isLoading)
-                        .onAppear() {
-                            // change to true for animating
-                            
-                        }
-                    
+                                            
                 }
                 
                 
@@ -187,6 +188,8 @@ struct ContentView: View {
                    
                     
                 }
+                
+                LoadingButton(processing: $processing, completed: $completed, loading: $loading)
                 
                 
             }

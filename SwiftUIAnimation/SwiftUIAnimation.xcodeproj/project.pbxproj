@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB0C12E22B82628B009A7016 /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0C12E12B82628B009A7016 /* LoadingButton.swift */; };
 		AB1B4C3F2B7F91BF00891034 /* SwiftUIAnimationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B4C3E2B7F91BF00891034 /* SwiftUIAnimationApp.swift */; };
 		AB1B4C412B7F91BF00891034 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B4C402B7F91BF00891034 /* ContentView.swift */; };
 		AB1B4C432B7F91C000891034 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB1B4C422B7F91C000891034 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB0C12E12B82628B009A7016 /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		AB1B4C3B2B7F91BF00891034 /* SwiftUIAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB1B4C3E2B7F91BF00891034 /* SwiftUIAnimationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIAnimationApp.swift; sourceTree = "<group>"; };
 		AB1B4C402B7F91BF00891034 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				AB1B4C3E2B7F91BF00891034 /* SwiftUIAnimationApp.swift */,
 				AB1B4C402B7F91BF00891034 /* ContentView.swift */,
+				AB0C12E12B82628B009A7016 /* LoadingButton.swift */,
 				AB1B4C422B7F91C000891034 /* Assets.xcassets */,
 				AB1B4C442B7F91C000891034 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB0C12E22B82628B009A7016 /* LoadingButton.swift in Sources */,
 				AB1B4C412B7F91BF00891034 /* ContentView.swift in Sources */,
 				AB1B4C3F2B7F91BF00891034 /* SwiftUIAnimationApp.swift in Sources */,
 			);
