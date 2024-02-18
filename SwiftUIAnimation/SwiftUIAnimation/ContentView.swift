@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var circleColorChanged = false
-    @State private var heartColorChanged = false
-    @State private var heartSizeChanged = false
+    @State private var redCircleColorChanged = false
+    @State private var redHeartColorChanged = false
+    @State private var redHeartSizeChanged = false
+    
+    @State private var greenCircleColorChanged = false
+    @State private var greenHeartColorChanged = false
+    @State private var greenHeartSizeChanged = false
     
     @State private var isLoading = false
     
@@ -27,39 +31,39 @@ struct ContentView: View {
                 ZStack {
                     Circle()
                         .frame(width: 200, height: 200)
-                        .foregroundColor(circleColorChanged ? Color(.systemGray5) : .red)
+                        .foregroundColor(redCircleColorChanged ? Color(.systemGray5) : .red)
                     
                     Image(systemName: "heart.fill")
-                        .foregroundColor(heartColorChanged ? .red : .white)
+                        .foregroundColor(redHeartColorChanged ? .red : .white)
                         .font(.system(size: 100))
-                        .scaleEffect(heartSizeChanged ? 1.0 : 0.5)
+                        .scaleEffect(redHeartSizeChanged ? 1.0 : 0.5)
                 }
                 // implicit animation
-                .animation(.spring(response: 0.3, dampingFraction: 0.3, blendDuration: 0.3), value: circleColorChanged)
+                .animation(.spring(response: 0.3, dampingFraction: 0.3, blendDuration: 0.3), value: redCircleColorChanged)
                 .onTapGesture {
                     
-                    circleColorChanged.toggle()
-                    heartColorChanged.toggle()
-                    heartSizeChanged.toggle()
+                    redCircleColorChanged.toggle()
+                    redHeartColorChanged.toggle()
+                    redHeartSizeChanged.toggle()
                     
                 }
                 //// 2
                 ZStack {
                     Circle()
                         .frame(width: 200, height: 200)
-                        .foregroundColor(circleColorChanged ? Color(.systemGray) : .green)
+                        .foregroundColor(greenCircleColorChanged ? Color(.systemGray) : .green)
                     
                     Image(systemName: "heart.fill")
-                        .foregroundColor(heartColorChanged ? .green : .white)
+                        .foregroundColor(greenHeartColorChanged ? .green : .white)
                         .font(.system(size: 100))
-                        .scaleEffect(heartSizeChanged ? 1.0 : 0.5)
+                        .scaleEffect(greenHeartSizeChanged ? 1.0 : 0.5)
                 }
                 .onTapGesture {
                     // explicit animation
                     withAnimation(.spring(response: 0.3, dampingFraction: 0.3, blendDuration: 0.3)) {
-                        circleColorChanged.toggle()
-                        heartColorChanged.toggle()
-                        heartSizeChanged.toggle()
+                        greenCircleColorChanged.toggle()
+                        greenHeartColorChanged.toggle()
+                        greenHeartSizeChanged.toggle()
                     }
                 }
                 
