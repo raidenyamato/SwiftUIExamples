@@ -8,11 +8,56 @@
 import SwiftUI
 
 struct ArticleDetailView: View {
+    
+    @Environment(\.dismiss) var dismiss
+    
+    var article: Article
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack(alignment: .leading) {
+                Image(article.image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                
+                Group {
+                    Text(article.title)
+                        .font(.system(.title, design: .rounded))
+                        .fontWeight(.black)
+                        .lineLimit(3)
+                    
+                    Text("By \(article.author)".uppercased())
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
+                .padding(.bottom, 0)
+                .padding(.horizontal)
+                
+                Text(article.content)
+                    .font(.body)
+                    .padding()
+                    .lineLimit(1000)
+                    .multilineTextAlignment(.leading)
+            }
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .ignoresSafeArea(.all, edges: .top)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    dismiss()
+                }, label: {
+                    Image(systemName: "chevron.left.circle.fill")
+                })
+            }
+        }
     }
 }
 
 #Preview {
-    ArticleDetailView()
+    NavigationStack {
+        ArticleDetailView(article: articles[0])
+            .navigationTitle("Article")
+    }
 }
